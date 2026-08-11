@@ -1,4 +1,5 @@
 import WaitlistForm from './WaitlistForm';
+import ListingDemo from './ListingDemo';
 
 export default function App() {
   return (
@@ -15,6 +16,8 @@ export default function App() {
         <WaitlistForm />
         <p className="fine-print">Free during early access. One email when it opens, nothing else.</p>
       </header>
+
+      <ListingDemo />
 
       <section className="pains" aria-label="What it handles">
         <div className="pain">

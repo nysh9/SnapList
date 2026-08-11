@@ -3,11 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#16a34a" />
     <meta
       name="description"
       content="SnapList turns one garment photo into a ready-to-post listing — SEO title, description, tags, a real sold-comp price, and a clean background cutout. Works across Depop, Poshmark, eBay, and Vinted."
     />
     <title>SnapList — one photo, a ready-to-post resale listing</title>
+
+    <!-- Social preview (Open Graph / Twitter).
+         TODO before launch: set og:url to the live Amplify domain, and add back the
+         image tags below once public/og-image.png exists (source: scratchpad/og-card.html).
+         For cards to render, og:image / twitter:image must be full https:// URLs. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SnapList" />
+    <meta property="og:title" content="SnapList — one photo, a ready-to-post resale listing" />
+    <meta
+      property="og:description"
+      content="Photograph a garment once. SnapList hands back an SEO title, description, tags, a real sold-comp price, and a clean background cutout — for Depop, Poshmark, eBay, and Vinted."
+    />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="SnapList — one photo, a ready-to-post resale listing" />
+    <meta
+      name="twitter:description"
+      content="Photograph a garment once. SnapList hands back an SEO title, description, tags, a real sold-comp price, and a clean background cutout."
+    />
+
+    <!-- Deferred: image-based preview. Restore these once public/og-image.png exists,
+         and switch twitter:card back to "summary_large_image".
+    <meta property="og:image" content="https://YOUR_DOMAIN/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="SnapList: one garment photo becomes a ready-to-post resale listing." />
+    <meta name="twitter:image" content="https://YOUR_DOMAIN/og-image.png" />
+    -->
+
   </head>
   <body>
     <div id="root"></div>

@@ -6,12 +6,12 @@ export default function App() {
     <div className="page">
       <header className="hero">
         <p className="eyebrow">Depop · Poshmark · eBay · Vinted</p>
-        <h1>Photograph it once. Skip the listing busywork.</h1>
+        <h1>Photograph it once. Price it from what actually sold — everywhere.</h1>
         <p className="subhead">
-          You know the drill: shoot the jacket, fight the background remover, dig through sold
-          listings to price it, then write a title that'll actually get found. SnapList does that
-          part. You take one photo; it hands back a title, description, tags, a price based on real
-          sold comps, and a clean cutout.
+          Pricing a resale piece means digging through completed listings on eBay, then Poshmark,
+          then Depop, one tab at a time. SnapList does it in one shot: snap a photo, and it prices
+          the item from what it actually sold for across every marketplace, writes a listing tuned
+          to each one, and flags which photo will pull the most clicks.
         </p>
         <WaitlistForm />
         <p className="fine-print">Free during early access. One email when it opens, nothing else.</p>
@@ -21,32 +21,37 @@ export default function App() {
 
       <section className="pains" aria-label="What it handles">
         <div className="pain">
-          <h2>Pricing without the 20-minute rabbit hole</h2>
+          <h2>1. One price, from every marketplace's real sales</h2>
           <p>
-            It pulls what comparable items actually sold for and suggests a number, so you're not
-            eyeballing it or scrolling completed listings across four apps.
+            Each app only sees its own data — eBay's tools price for eBay, Poshmark's for Poshmark.
+            SnapList aggregates what the same piece actually sold for across all of them into one
+            confidence-scored number, so you're not eyeballing it or scrolling completed listings
+            four tabs at a time.
           </p>
         </div>
         <div className="pain">
-          <h2>Titles &amp; descriptions that get found</h2>
+          <h2>2. A listing written for each marketplace</h2>
           <p>
-            Real keywords for how people search resale, not filler. Copy them straight into the
-            listing, tweak if you want, done.
+            One photo, a listing tuned to where it's going — Depop's hashtags, eBay's SEO keywords,
+            Grailed's streetwear tone. A single generic blurb reads wrong everywhere; this matches
+            how each platform's buyers actually search.
           </p>
         </div>
         <div className="pain">
-          <h2>Backgrounds removed without eating the garment</h2>
+          <h2>3. The photo most likely to get clicked</h2>
           <p>
-            The usual cutout tools clip sleeves and straps. This one keeps the whole piece and drops
-            it on clean white.
+            Photos move resale more than any caption. SnapList flags your strongest shot and what's
+            missing — the label close-up, the flaw shot, better light — so the listing looks the
+            part before it goes up.
           </p>
         </div>
       </section>
 
       <section className="flow" aria-label="How it works">
         <p>
-          <strong>Snap a photo → get a listing.</strong> That's the whole loop. It works the same
-          whether you're cross-posting to four marketplaces or just clearing out a closet.
+          <strong>Snap a photo → get a price, then the listing.</strong> That's the whole loop. It
+          works the same whether you're cross-posting to four marketplaces or just clearing out a
+          closet.
         </p>
       </section>
 

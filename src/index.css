@@ -195,18 +195,6 @@ body {
   color: #fff;
 }
 
-.demo-badge {
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 6px;
-  background: var(--accent);
-  color: var(--accent-fg);
-}
-
 .demo-fields {
   margin-top: 12px;
 }
@@ -219,14 +207,29 @@ body {
 }
 
 .demo-price {
-  margin: 0 0 10px;
-  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0 0 12px;
+}
+
+.demo-price-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--muted);
 }
 
 .demo-price strong {
-  font-size: 1.15rem;
+  font-size: 1.6rem;
+  line-height: 1;
   color: var(--accent);
+}
+
+.demo-price-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
 }
 
 .demo-tags {

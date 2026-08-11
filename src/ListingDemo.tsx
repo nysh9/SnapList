@@ -1,6 +1,6 @@
 export default function ListingDemo() {
   return (
-    <div className="demo" aria-label="Example: one photo in, a ready listing out">
+    <div className="demo" aria-label="Example: one photo in, a priced listing out">
       <figure className="demo-card demo-before">
         <div className="demo-photo" role="img" aria-label="A photo of a denim jacket on a messy background">
           <span className="demo-photo-emoji" aria-hidden="true">🧥</span>
@@ -12,15 +12,16 @@ export default function ListingDemo() {
       <div className="demo-arrow" aria-hidden="true">→</div>
 
       <figure className="demo-card demo-after">
-        <div className="demo-cutout" role="img" aria-label="The same jacket, background removed on clean white">
+        <div className="demo-cutout" role="img" aria-label="The same jacket on a clean background">
           <span className="demo-photo-emoji" aria-hidden="true">🧥</span>
-          <span className="demo-badge">background removed</span>
         </div>
         <div className="demo-fields">
-          <p className="demo-title">Vintage Levi&apos;s Denim Trucker Jacket — Medium Wash, Size M</p>
           <p className="demo-price">
-            <strong>$48</strong> <span>based on 27 sold comps</span>
+            <span className="demo-price-label">Suggested price</span>
+            <strong>$48</strong>
+            <span className="demo-price-sub">from 31 sold comps across eBay, Poshmark &amp; Depop</span>
           </p>
+          <p className="demo-title">Vintage Levi&apos;s Denim Trucker Jacket — Medium Wash, Size M</p>
           <div className="demo-tags">
             <span>#vintagelevis</span>
             <span>#denimjacket</span>
@@ -28,7 +29,7 @@ export default function ListingDemo() {
             <span>#trucker</span>
           </div>
         </div>
-        <figcaption>SnapList hands back a listing</figcaption>
+        <figcaption>SnapList prices it and writes the listing</figcaption>
       </figure>
     </div>
   );

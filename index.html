@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SnapList</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='8' y='8' width='16' height='16' rx='3' transform='rotate(45 16 16)' fill='%23e0664a'/%3E%3C/svg%3E">
+<style>
+  /* ---- COLOR SCHEME (anchored peach palette) ---- */
+  :root{
+    --ink:#241f1c;          /* text */
+    --ink-soft:#5c524c;     /* muted text */
+    --ink-faint:#8a7d75;    /* captions */
+    --cream:#f8edeb;        /* page bg */
+    --cream-2:#fae1dd;      /* raised surface */
+    --blush:#fec5bb;
+    --peach:#ffd7ba;
+    --apricot:#fec89a;
+    --sage:#d8e2dc;
+    --warm-grey:#ece4db;
+    --line:#e4d5cd;         /* borders */
+    --coral:#cf4a2e;        /* primary CTA */
+    --coral-bright:#e0664a; /* accent mark */
+    --teal:#0f6d67;         /* confidence / secondary */
+    --paper:#fffaf7;        /* card bg */
+  }
+
+  /* ---- minimal base ---- */
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:system-ui,sans-serif;line-height:1.5}
+  main{max-width:900px;margin:0 auto;padding:2rem 1.25rem}
+  h1{font-size:2.5rem;margin:.5rem 0}
+  .mark{color:var(--coral)}
+  .btn{display:inline-block;background:var(--coral);color:#fff;border:none;
+    padding:.7rem 1.2rem;border-radius:10px;font:inherit;cursor:pointer}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  section{margin:2.5rem 0}
+
+  /* ---- interaction: photo -> price ---- */
+  .teaser{background:var(--paper);border:1px solid var(--line);border-radius:14px;
+    padding:1.25rem;max-width:360px}
+  .teaser .shot{background:var(--blush);border-radius:10px;height:150px;
+    display:grid;place-items:center;color:var(--ink-soft);font-size:.85rem}
+  .price{font-size:2rem;font-weight:700;margin-top:.75rem}
+  .comps{font-size:.85rem;color:var(--ink-soft)}
+  .conf{height:6px;background:var(--warm-grey);border-radius:99px;margin-top:.5rem;overflow:hidden}
+  .conf > i{display:block;height:100%;width:0;background:var(--coral);
+    transition:width 1s ease}
+  .teaser.play .conf > i{width:84%}
+
+  /* ---- features 1/2/3 ---- */
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .feature{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1rem}
+  .feature .num{color:var(--coral-bright);font-weight:700;font-size:.8rem}
+  @media(max-width:640px){.features{grid-template-columns:1fr}h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<main>
+
+  <!-- HERO / TEXT -->
+  <section>
+    <p style="color:var(--ink-faint);font-size:.85rem">SnapList</p>
+    <h1>One photo. A price backed by <span class="mark">real sales.</span></h1>
+    <p style="color:var(--ink-soft);max-width:48ch">
+      Photograph an item once and get a suggested resale price from what similar
+      pieces actually sold for — plus listing copy for each marketplace.
+    </p>
+    <p>
+      <button class="btn" onclick="runDemo()">Try it now →</button>
+      <button class="btn ghost">Watch demo</button>
+    </p>
+  </section>
+
+  <!-- INTERACTION: photo -> price (bare-bones, click to reveal) -->
+  <section>
+    <div class="teaser" id="teaser">
+      <div class="shot">[ photo ]</div>
+      <div class="price"><span id="priceVal">$0</span></div>
+      <div class="comps">from <span id="compVal">0</span> sold comps · eBay, Poshmark, Depop</div>
+      <div class="conf"><i></i></div>
+    </div>
+  </section>
+
+  <!-- FEATURES 1 / 2 / 3 -->
+  <section class="features">
+    <div class="feature"><div class="num">01</div><h3>Sold-comp pricing</h3>
+      <p>A confidence-scored price from real closed sales.</p></div>
+    <div class="feature"><div class="num">02</div><h3>Listings per platform</h3>
+      <p>Title, description, and tags tuned to each marketplace.</p></div>
+    <div class="feature"><div class="num">03</div><h3>Photo coaching</h3>
+      <p>Your best shot flagged, plus the shots you're missing.</p></div>
+  </section>
+
+</main>
+
+<script>
+  // bare-bones interaction: count price + comps up, fill confidence bar
+  function runDemo(){
+    var t = document.getElementById('teaser');
+    t.classList.add('play');
+    countUp(document.getElementById('priceVal'), 48, '$');
+    countUp(document.getElementById('compVal'), 31, '');
+  }
+  function countUp(el, to, pre){
+    var start = performance.now(), dur = 800;
+    function step(now){
+      var p = Math.min(1, (now - start) / dur);
+      el.textContent = pre + Math.round(to * p);
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+</script>
+</body>
+</html>

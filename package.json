@@ -1,0 +1,22 @@
+{
+  "name": "snaplist-backend",
+  "version": "0.1.0",
+  "description": "SnapList — Amplify Gen 2 backend (S3, Lambda, Bedrock, DynamoDB, etc.)",
+  "type": "module",
+  "scripts": {
+    "sandbox": "ampx sandbox",
+    "sandbox:delete": "ampx sandbox delete"
+  },
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.4.0",
+    "@aws-amplify/backend-cli": "^1.2.9",
+    "aws-cdk-lib": "^2.158.0",
+    "constructs": "^10.3.0",
+    "esbuild": "^0.23.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  },
+  "dependencies": {
+    "aws-amplify": "^6.6.6"
+  }
+}
